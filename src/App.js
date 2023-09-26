@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+// import TodoList from './component/TodoList';
+import Headers from "./component/Headers";
+import OnlineShoping from "./component/OnlineShoping";
+import ContexCart from "./component/ContexCart";
+// import CartContext from "./ShopingContex";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Headers />
+
+      <Routes>
+        <Route path="OnlineShoping" element={<OnlineShoping />} />
+        <Route path="ContexCart" element={<ContexCart />} />
+      </Routes>
     </div>
   );
 }
