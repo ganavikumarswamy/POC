@@ -20,7 +20,7 @@ export default function ContexCart() {
               <Card>
                 <CardMedia
                   sx={{ height: 100 }}
-                  image="https://cdn.pixabay.com/photo/2023/07/14/10/30/de-havilland-tiger-moth-8126721_1280.jpg"
+                  image={el.image}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -30,14 +30,17 @@ export default function ContexCart() {
                     {el.price}
                   </Typography>
                 </CardContent>
-
+                <Grid sx={{ml:2,mb:2}}>
                 <Button
+                variant="contained"
+                color="error"
                   onClick={() => {
                     setCart(cart.filter((c) => c.id !== el.id));
                   }}
                 >
                   Delete
                 </Button>
+                </Grid>
               </Card>
             </Grid>
           ))}

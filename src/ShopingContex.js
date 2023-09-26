@@ -7,11 +7,11 @@ const CartContext = createContext();
 const ContextProvider = ({children}) => {
   const [cart, setCart] = useState([]);
 
-  const productsArray = [...Array(20)].map(() => ({
+  const productsArray = [...Array(10)].map(() => ({
     id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
-    image: faker.random.image(),
+    image: ["https://cdn.pixabay.com/photo/2023/09/11/02/53/house-8245930_1280.jpg"],
   }));
 
   const [products ,setProducts] = useState(productsArray);

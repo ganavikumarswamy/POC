@@ -22,9 +22,10 @@ function OnlineShoping() {
         {products?.map((el, i) => (
           <Grid item xs={6} sm={6} md={3} lg={3} xl={3} sx={{ p: 8 }}>
             <Card>
+              
               <CardMedia
                 sx={{ height: 100 }}
-                image="https://cdn.pixabay.com/photo/2023/07/14/10/30/de-havilland-tiger-moth-8126721_1280.jpg"
+                image={el.image}
               >
                 {/* <img src={el.image} alt="log" /> */}
               </CardMedia>
@@ -36,19 +37,25 @@ function OnlineShoping() {
                   {el.price}
                 </Typography>
               </CardContent>
+              <Grid sx={{ml:2,mb:2}}>
               {!cart.includes(el) ? (
-                <Button onClick={() => setCart([...cart, el])}>
+               
+                <Button  variant="contained" onClick={() => setCart([...cart, el])}>
                   Add to Cart
                 </Button>
               ) : (
                 <Button
+                variant="contained"
+                color="error"
                   onClick={() => {
                     setCart(cart.filter((c) => c.id !== el.id));
                   }}
                 >
                   Remove from Cart
                 </Button>
+                
               )}
+              </Grid>
             </Card>
           </Grid>
         ))}
